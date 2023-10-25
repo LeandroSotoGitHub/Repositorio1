@@ -1,0 +1,1118 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+}
+
+@font-face {
+    font-family: logo1;
+    src: url(Letras/FUTRFW.TTF);
+}
+
+@font-face {
+    font-family: logo2;
+    src: url(Letras/Catchye.otf);
+}
+
+
+
+
+/******************** INICIO MENU HAMBURGUESA*********************** */
+.blur{
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(0.5rem);
+    margin-bottom: 100px;
+}
+
+
+.container{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+
+.hero{
+    background-image:
+    linear-gradient(rgba(202, 200, 200, 0.363), rgba(0, 0, 0, 0.2)),
+    url('./assets/city-5974876.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: fit-content;
+    color: #000;
+    width: fit-content;
+}
+
+.nav{
+    --state-close: scale(0);
+    --state-hamburguer:scale(1);
+    --state-menu: translate(-100%);
+
+    padding: 40px 0 20px 0;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.nav:target{
+    --state-menu: translate(0);
+    --state-close: scale(1);
+    --state-hamburguer:scale(0);
+}
+
+.nav__logo{
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.nav__hamburguer,
+.nav__close{
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .4s transform;
+}
+
+.nav__hamburguer{
+    transform: var(--state-hamburguer);
+}
+
+.nav__close{
+    transform: var(--state-close);
+}
+
+.nav__icon{
+    width: 40px;
+}
+
+.nav__links{
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+    display: grid;
+    align-content: center;
+    gap: 1em;
+    padding-left: 5%;
+
+    transform: var(--state-menu);
+    transition: .3s transform;
+}
+
+.nav__item{
+    list-style: none;
+}
+
+.nav__link{
+    color: #332d22;
+    text-decoration: none;
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/******************** FIN MENU HAMBURGUESA*********************** */
+
+
+
+/******************** INICIO SECCION BANNER*********************** */
+
+.banner{
+    width: 100%;
+    background-size: cover;
+    height: fit-content;
+    margin-bottom: 160px;
+}
+
+
+.banner > div{
+    width: 90%;
+    height: 100%;
+    margin: 5%;
+}
+
+
+.llamada-accion{
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: left;
+    align-items: flex-start;
+    max-width: 55%;
+}
+
+
+.llamada-accion h2{
+    font-family: logo2;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 45px;
+    color:#332d22;
+    padding: 35px;
+    background-color: rgba(221, 208, 190, 0.75);
+    max-width: 600px;
+    text-align: left;
+    width: 100%;
+}
+
+.btn{
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(221,208,190);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 35px;
+    width: 50%;
+    text-align: center;
+    transition: all 1s;
+    Transition: all 1s ease;
+}
+
+.btn:hover{
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(1.05,1.05);
+    font-size: 18px;
+}
+
+.AsesorarteConte{
+    display: inline-flex;
+    justify-content: center;
+    align-content: flex-end;
+    flex-direction: column;
+    margin-left: 8%;
+    width: 37%;
+    height: fit-content;
+    margin-bottom: 100px;
+}
+
+
+.asesorarte{
+    color: rgba(221,208,190);
+    background-color: rgba(0, 0, 0, 0.80);
+    border-top: solid 5px rgba(221,208,190);
+}
+
+.asesorarte h2{
+    font-size: 24px;
+    text-align: center;
+    padding: 2%;
+    margin-bottom: 20px;
+}
+
+.asesorarte p{
+    font-size: 100%;
+    text-align: left;
+    padding: 3%;
+}
+/******************** FIN SECCION BANNER*********************** */
+
+
+
+
+
+
+
+
+/******************** INICIO SECCION VENTAJAS*********************** */
+
+
+.contenedor__ventajas{
+    background-color: rgba(128, 120, 107, 0.9);
+    height: 80vh;
+}
+
+.ventajas{
+    width: 90%;
+    height: 40vh;
+    display: inline-flex;
+    align-items: center;
+    margin: -8px 5% 5% 5%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.ventajas img{
+    width: 70px;
+    background-size: cover;
+    background-color: rgba(151, 141, 127, 0.7);
+    margin: 10px ;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.ventajas h2{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(58, 56, 41, 0.5);
+    padding: 10px;
+    font-size: 25px;
+}
+
+.ventajas p{
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.ventajas > div{
+    background-color: #B6ACA0;
+    color: #352a15bc;
+    border-top: solid 5px #332d22;
+    height: 75vh;
+}
+
+.div__ventajas__1{
+    padding:10px;
+}
+
+
+.div__ventajas__2{
+    margin: 0% 5% 0% 5%;
+    padding: 10px;
+}
+
+
+.div__ventajas__2 p{
+    padding-bottom: 10px;
+}
+
+
+.ventajas a{
+    text-decoration: none;
+    color: rgb(204, 194, 180);
+    cursor:pointer;
+        position:relative;
+        padding:10px 20px;
+        background:#343028;
+        font-size:18px;
+        border-top-right-radius:10px;
+        border-bottom-left-radius:10px;
+        transition:all 1s;
+        &:after,&:before{
+            content:" ";
+            width:10px;
+            height:10px;
+            position:absolute;
+            border :0px solid rgb(151, 141, 127);
+            transition:all 1s;
+            }
+        &:after{
+            top:-1px;
+            left:-1px;
+            border-top:5px solid rgb(151, 141, 127);
+            border-left:5px solid rgb(151, 141, 127);
+        }
+        &:before{
+            bottom:-1px;
+            right:-1px;
+            border-bottom:5px solid rgb(151, 141, 127);
+            border-right:5px solid rgb(151, 141, 127);
+        }
+        &:hover{
+            border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+            &:before,&:after{
+                width:100%;
+                height:100%;
+            }
+    }
+}
+.ventajas a:hover {
+    background-color: #332d22;
+    color: #fff;
+}
+
+.div__ventajas__3 a{
+    display: none;
+}
+
+.div__ventajas__3 p{
+    padding: 10px;
+}
+
+/******************** FIN SECCION VENTAJAS*********************** */
+
+
+
+
+/******************** INICIO SECCION LINEAS *********************** */
+.SecLineas{
+    width: 100%;
+}
+
+
+.ConteLineas{
+    height: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.Lineas{
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+
+
+    background-color: rgba(128, 120, 107, 0.9);
+    margin: 20px;
+    padding: 30px 10px;
+    height: 700px;
+}
+
+.LineasImagenConte{
+    display: flex;
+    margin: 0 auto;
+    height: 275px;
+}
+
+.LineasTexto{
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    margin: 0px 30px 0 30px;
+}
+
+.LineasImagen {
+    display: block;
+    position: relative;
+    width: 14rem;
+    height: 14rem; 
+    cursor: pointer;
+    background-size: 120%;
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.75);
+}
+.LineasImagen:hover {
+    box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
+    background-position: 0% 50%;
+}
+.LineasImagen:hover .text {
+    transform: rotate(-45deg) translate(0px) rotate(-315deg);
+    background: rgba(209, 142, 49, 0.8);
+    width: 14rem;
+    letter-spacing: 1rem;
+    line-height: 14rem;
+    height: 14rem;
+    margin-top: -7rem;
+    margin-left: -7rem;
+    transition: all 0.5s cubic-bezier(0.40, 0, 0.1, 1), letter-spacing 1.5s ease-out;
+}
+
+.LineasImagen .text {
+        display: block;
+        position: absolute;
+        width: 8rem;
+        height: 8rem;
+        line-height: 8rem;
+        left: 50%;
+        top: 50%;
+        margin-top: -7rem;
+        margin-left: -7rem;
+        font-size: 1.5rem;
+        text-align: center;
+        color: #fff;
+        border-radius: 50%;
+        background: #726b5c;
+        transform: rotate(-180deg) translate(-10rem) rotate(180deg);
+        box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.LineasTexto h2{
+    font-family: logo1;
+    font-size: 20px;
+    letter-spacing: -3px;
+    
+
+
+    margin-bottom: 20px;
+    border-bottom: solid 2px #332d22;
+}
+
+.LineasTexto p{
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #332d22;
+}
+
+
+.Herrero .LineasImagen {
+    background: url(assets/LineaHerrero.png) no-repeat 100% 50%;
+    background-size: cover;
+    background-color: rgba(50, 44, 35, 0.75);
+}
+
+
+.Modena .LineasImagen {
+    background: url(assets/LineaModena.png) no-repeat 100% 50%;
+    background-size: cover;
+    background-color: rgba(50, 44, 35, 0.75);
+}
+
+.A-40 .LineasImagen{
+    background: url(assets/corte-a40.png) no-repeat 100% 50%;
+    background-size: cover;
+    background-color: rgba(50, 44, 35, 0.75);
+}
+
+
+.PVC .LineasImagen{
+    background: url(assets/pvc-1.png) no-repeat 100% 50%;
+    background-size: cover;
+    background-color: rgba(50, 44, 35, 0.75);
+}
+
+
+
+/******************** INICIO SECCION CARRUSEL*********************** */
+
+
+.titulo{
+    padding: 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 2%;
+}
+
+
+.titulo h2{
+    font-family: logo1;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    font-size: 35px;
+    color: #2b271f;
+
+    background-color: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(0.5rem);
+
+    padding: 4%;
+
+    text-align: center;
+    text-shadow: 3px 3px 10px rgba(53, 42, 21, 0.256);
+    border-top: solid 5px #332d22;
+}
+
+.carrousel{
+    width: 100%;
+}
+
+.conteCarrousel{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.itemCarrousel{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.itemCarrouselTarjeta{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 120, 107);
+}
+
+
+
+.itemCarrouselArrows{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; 
+}
+
+.itemCarrouselArrows > i:hover {
+    cursor: pointer;
+}
+
+
+.carrouseltexto h2{
+    display: block;
+}
+
+
+/** TARJETA 1*********************** */
+
+
+.Tarjeta1 {
+    padding: 2%;
+    justify-content: center;
+}
+
+.CarrouselTitulo{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+
+    font-family: logo1;
+    letter-spacing: -7px;
+    font-size: 30px;
+    border-bottom: solid 1px #332d22;
+    color: #332d22;
+    
+}
+
+.ContenedorTarjetaImagen{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.TarjetaImagen img{
+    width: 300px;
+    height: 400px;
+}
+
+.TarjetaImagen h3{
+    font-size: 20px;
+    letter-spacing: 1.5px;
+
+
+    margin-top: 10px;
+}
+
+
+.itemCarrouselArrows > a > i{
+    color: white;
+}
+
+/******************** FIN SECCION CARRUSEL*********************** */
+
+
+
+/******************** INICIO SECCION GALERIA*********************** */
+.galeria{
+    background-color: #333;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 200px);
+    padding: 40px;
+    grid-gap: 20px;
+}
+
+.item{
+    border: 3px solid springgreen;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(100%);
+    transition: all 0.9s;
+}
+.item:hover{
+    filter: sepia(0%);
+    transform: scale(1.15);
+}
+.item1{
+    background-image: url(img/blackberries-gccda53105_1920.jpg);
+}
+.item2{
+    background-image: url(img/carrots-g09684076b_1920.jpg);
+}
+.item3{
+    background-image: url(img/blueberries-g908c57b3c_1920.jpg);
+}
+.item4{
+    background-image: url(img/cherries-g17c80d496_1920.jpg);
+}
+.item5{
+    background-image: url(img/potatoes-g7f8ce661e_1920.jpg);
+}
+.item6{
+    background-image: url(img/onions-g7702794c0_1920.jpg);
+}
+.item7{
+    background-image: url(img/strawberry-g0ffa2143b_1920.jpg);
+}
+.item8{
+    background-image: url(img/oranges-gc3567613f_1920.jpg);
+}
+
+/******************** FIN SECCION GALERIA*********************** */
+
+
+
+
+
+/******************** INICIO SECCION FOOTER*********************** */
+.pie-pagina{
+    width: 100%;
+    background-color: #7e776e ;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #332d22;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #332d22;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #332d22;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #7e776e;
+}
+.pie-pagina .grupo-2{
+    background-color: #332d22;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+/******************** FIN SECCION FOOTER*********************** */
+
+
+.ContenedorMapa{
+    background-color: #7e776e;
+}
+.mapa{
+    width: 100%;
+    height: 400PX;
+}
+
+
+
+
+
+
+
+
+
+/* BOTON WHATSAPP */
+.what{
+    background-color: #332d22;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+    color: #fff;
+    line-height: 70px;
+    font-size: 45px;
+    border-radius: 100%;
+}
+
+/* FIN BOTON WHATSAPP */
+
+
+
+
+
+
+/* *********************************************** MEDIA QUARIES *********************************************** */
+
+/************************** INICIO MENU HAMBURGUESA */
+
+@media (max-width:768px){
+    .blur{
+        background-color: 0;
+        backdrop-filter: none;
+        margin-bottom: 40px;
+    }
+
+}
+
+@media (min-width:768px) {
+
+    .nav{
+        --state-hamburguer:scale(0);
+        --state-menu: translate(0);
+    }
+    
+    .nav:target{
+        --state-close: scale(0);
+    }
+
+    .nav__links{
+        padding: 0;
+        background-color: unset;
+        position: unset;
+        gap: 1.5em;
+        grid-auto-flow: column;
+    
+        transform: unset;
+
+        grid-column: -2/-1;
+        grid-row: 1/2;
+    }
+
+    .nav__link{
+        font-size: 1rem;
+        letter-spacing: none;
+    }
+}
+/************************** FIN MENU HAMBURGUESA */
+
+
+
+
+/************************** INICIO SECCION BANNER */
+@media (max-width:1250px) {
+    .AsesorarteConte{
+        width: 35%;
+    }
+}
+
+@media (max-width:768px) {
+    .hero{
+        height: fit-content;
+    }
+    .banner{
+        display: inline-flex;
+        flex-flow: wrap column;
+        justify-content: center;
+        align-content: center;
+        margin-bottom: 80px;
+    }
+
+    .llamada-accion{
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .llamada-accion h2{
+        text-align: center;
+    }
+
+    .AsesorarteConte{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .asesorarte{
+        margin: 10% 10% 0 10%;
+        width: 80%;
+        height: fit-content;
+        align-self: center;
+    }
+    .banner > div{
+        height: fit-content;
+    }
+    .ventajas > div{
+        height: 90vh;
+    }
+}
+@media (max-width:560px) {
+    .nav__logo{
+        width: 145px;
+    }
+
+    .llamada-accion{
+        align-items: center;
+    }
+
+    .llamada-accion h2{
+        font-size: 35px;
+        width: 100%;
+        padding: 20px;
+    }
+    .llamada-accion a{
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .AsesorarteConte{
+        font-size: 90%;
+    }
+    .asesorarte{
+        align-items: center;
+    }
+    .asesorarte h2{
+        font-size: 20px;
+        padding-bottom: 5%;
+    }
+}
+/************************** FIN SECCION BANNER */
+
+
+
+
+
+
+/************************** INICIO SECCION VENTAJAS */
+@media (max-width:1200px){
+    .ventajas p{
+        padding-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+@media (max-width:1100px) {
+
+    .ventajas > div{
+        height: 90vh;
+        margin-top: 50px;
+    }
+
+    .ventajas p{
+        padding-bottom: 40px;
+        letter-spacing: 0px;
+    }
+}
+
+
+
+@media (max-width:800px){
+    .contenedor__ventajas{
+        height: 210vh;
+    }
+    
+    .ventajas{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .ventajas p{
+        padding: 10px;
+        padding-top: 3px;
+        font-size: 19px;
+        letter-spacing: 0px;
+    }
+    
+    .ventajas h2{
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+    
+    .ventajas > div{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 100%;
+        height: fit-content;
+    }
+    
+    .div__ventajas__2 a{
+        display: none;
+    }
+
+    .div__ventajas__3 a{
+        display: inline-flex;
+        margin-bottom: 10px;
+        width: 30%;
+        
+    }
+
+}
+
+
+@media (max-width:400px) { 
+    .contenedor__ventajas{
+        height: 190vh;
+    }
+    .div__ventajas__3 a{
+        font-size: 20px;
+        width: fit-content;
+        
+    }
+}
+/************************** FIN SECCION VENTAJAS */
+
+/************************** INICIO SECCION LINEAS */
+@media (max-width:800px) { 
+    .ConteLineas{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .Lineas{
+        height: 600px;
+    }
+}
+
+@media (max-width:1000px) {
+    .Lineas{
+        height: 800px;
+    }
+}
+
+
+
+
+/************************** FIN SECCION LINEAS */
+
+
+
+
+/************************** INICIO SECCION GALERIA */
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    .galeria{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .item1{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .item2{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .item3{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .item4{
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    .item5{
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+    .item6{
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    .item7{
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+    .item8{
+        grid-column: 2/4;
+        grid-row: 4/5;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    h2{
+        font-size: 50px;
+    }
+
+    .galeria{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 200px 200px;
+    }
+
+    .nright h3{
+        font-size: 40px;
+    }
+
+    .nosotros .nright p{
+        font-size: 27px;
+    }
+}
+/************************** FIN SECCION GALERIA */
+
+
+/************************** INICIO SECCION FOOTER */
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+/************************** FIN SECCION FOOTER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* BOTON WHATS APP */
+@media (max-width:560px){
+    .what{
+        height: 60px;
+        width: 60px;
+        right: 15px;
+        bottom: 15px;
+        line-height: 60px;
+        font-size: 40px;
+    }
+}
+/* FIN BOTON WHATS APP */
