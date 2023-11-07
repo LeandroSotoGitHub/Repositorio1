@@ -71,7 +71,6 @@
     background-repeat: no-repeat;
     height: fit-content;
     color: #000;
-    width: fit-content;
 }
 
 .nav{
@@ -733,15 +732,20 @@
 
 
 /******************** INICIO SECCION GALERIA*********************** */
-/* .galeria{
+
+
+.galeria{
     background-color: #333;
     display: grid;
     padding: 40px;
     grid-gap: 20px;
+
 }
 
+
+
 .item{
-    border: 3px solid springgreen;
+    border: 3px solid rgba(102, 92, 68);
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -755,7 +759,7 @@
 .item img{
     width: 100%;
     transition: all 0.9s;
-} */
+}
 
 
 /******************** FIN SECCION GALERIA*********************** */
@@ -988,7 +992,7 @@
         padding: 0;
         align-items: center;
     }
-
+    
     .llamada-accion h2{
         text-align: center;
     }
@@ -1004,10 +1008,11 @@
     }
 
     .asesorarte{
-        margin: 10% 10% 0 10%;
-        width: 80%;
+        width: 100%;
         height: fit-content;
         align-self: center;
+
+        font-size: 17px;
     }
     .banner > div{
         height: fit-content;
@@ -1080,7 +1085,7 @@
 
 @media (max-width:800px){
     .contenedor__ventajas{
-        height: 210vh;
+        height: 1200px;
     }
     
     .ventajas{
@@ -1186,7 +1191,7 @@
 
 
 /************************** INICIO SECCION GALERIA */
-/* @media (min-width:1024px){
+@media (min-width:1024px){
     .galeria {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(6, 400px);
@@ -1265,27 +1270,8 @@
         grid-column: 2/4;
         grid-row: 4/5;
     }
-} */
+} 
 
-/* @media only screen and (min-width: 1024px){
-
-    h2{
-        font-size: 50px;
-    }
-
-    .galeria{
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 200px 200px;
-    }
-
-    .nright h3{
-        font-size: 40px;
-    }
-
-    .nosotros .nright p{
-        font-size: 27px;
-    }
-} */
 /************************** FIN SECCION GALERIA */
 
 
