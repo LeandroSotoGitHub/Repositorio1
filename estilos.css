@@ -1,38 +1,50 @@
 @font-face {
     font-family: logo1;
     src: url(Letras/FUTRFW.TTF);
+
+    font-display: swap
 }
 
 @font-face {
     font-family: logo2;
     src: url(Letras/Catchye.otf);
+
+    font-display: swap
 }
 
 
 @font-face {
     font-family: varios;
     src: url(Letras/GeosansLight.ttf);
+
+    font-display: swap
 }
 
 @font-face {
     font-family: roboto;
     src: url(Letras/Roboto-Light.ttf);
+
+    font-display: swap
 }
 
 @font-face {
     font-family: robotobold;
     src: url(Letras/Roboto-Bold.ttf);
+
+    font-display: swap
 }
 
 @font-face {
     font-family: robotoregular;
     src: url(Letras/Roboto-Regular.ttf);
+
+    font-display: swap
 }
 
 *{
     margin: 0;
     box-sizing: border-box;
-    font-family: robotoregular;
+    font-family: roboto;
     padding: 0;
 }
 
@@ -54,9 +66,8 @@
 
 
 .hero{
-    background-image:
-    linear-gradient(rgba(202, 200, 200, 0.363), rgba(0, 0, 0, 0.2)),
-    url('./assets/city-5974876.jpg');
+    background: linear-gradient(rgba(202, 200, 200, 0.363), rgba(0, 0, 0, 0.2)),
+    url('./assets/city-5974876\ \(2\).webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -221,6 +232,7 @@
 }
 
 .asesorarte h2{
+    font-family: robotoregular;
     font-size: 24px;
     text-align: center;
     padding: 2%;
@@ -228,6 +240,7 @@
 }
 
 .asesorarte p{
+    font-family: roboto;
     font-size: 100%;
     text-align: left;
     padding: 3%;
@@ -270,11 +283,14 @@
 }
 
 .ventajas h2{
-    font-family: robotobold;
     text-transform: uppercase;
     text-shadow: 1px 1px 3px rgba(58, 56, 41, 0.5);
     padding: 10px;
     font-size: 25px;
+}
+
+.ventajas strong{
+    font-family: robotoregular;
 }
 
 .ventajas p{
@@ -483,7 +499,7 @@
 }
 
 .Herrero .LineasImagen {
-    background: url(assets/LineaHerrero.png) no-repeat 100% 50%;
+    background: url(assets/LineaHerrero.webp) no-repeat 100% 50%;
     background-size: cover;
     background-color: rgba(50, 44, 35, 0.75);
 }
@@ -496,7 +512,7 @@
 }
 
 .A-40 .LineasImagen{
-    background: url(assets/corte-a40.png) no-repeat 100% 50%;
+    background: url(assets/corte-a40.webp) no-repeat 100% 50%;
     background-size: cover;
     background-color: rgba(50, 44, 35, 0.75);
 }
@@ -645,15 +661,13 @@
 
 /******************** INICIO SECCION VIDRIADO*********************** */
 .SeccionVidriado{
-    background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 120, 107, 0.5)),
-    url('assets/vidriado.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(128, 120, 107, 0.5)),
+    url('assets/vidriado.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     width: 100%;
 }
 
@@ -788,6 +802,7 @@
 .Mapa img{
     max-width: 100%;
     width: 400px;
+    height: 400px;
     margin-left: 40px;
 }
 
@@ -1179,14 +1194,19 @@
 
 /************************** INICIO SECCION VIDRIADO */
 @media (max-width:800px) {
-    .ContenedorVidriado{
-        height: 750px;
-        width: fit-content;
+    .SeccionVidriado{
+        width: 100%;
+        background-size: cover;
+        height: 100vh;
     }
 
     .ContenedorVidriado a{
-        margin-bottom: 0px;
+        margin-bottom: 25px;
         width: fit-content;
+    }
+
+    .VidriadoTexto{
+        margin-bottom: 100px;
     }
 
     .VidriadoTitulo h2{
@@ -1306,6 +1326,7 @@
 
     .Mapa img {
         width: 300px;
+        height: 300px;
         margin-bottom: 15px;
         margin-right: 20px;
     }
@@ -1341,12 +1362,6 @@
     .hero{
         height: 7000px;
         width: 100%;
-
-        background-color: #726b5c;
-    }
-
-    .SeccionVidriado{
-        background-color: #7e776e;
     }
 }
 
