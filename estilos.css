@@ -1,10 +1,3 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: roboto;
-    padding: 0;
-}
-
 @font-face {
     font-family: logo1;
     src: url(Letras/FUTRFW.TTF);
@@ -15,10 +8,6 @@
     src: url(Letras/Catchye.otf);
 }
 
-@font-face {
-    font-family: cursiva;
-    src: url(Letras/GeosansLight-Oblique.ttf);
-}
 
 @font-face {
     font-family: varios;
@@ -40,10 +29,13 @@
     src: url(Letras/Roboto-Regular.ttf);
 }
 
-@font-face {
-    font-family: vidriado;
-    src: url(Letras/Louis\ George\ Cafe.ttf);
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: robotoregular;
+    padding: 0;
 }
+
 
 /******************** INICIO MENU HAMBURGUESA*********************** */
 .blur{
@@ -190,6 +182,7 @@
 }
 
 .btn{
+    font-family: roboto;
     font-size: 18px;
     text-decoration: none;
     text-transform: uppercase;
@@ -429,6 +422,11 @@
     box-shadow: 0px 0.5rem 2rem rgba(0, 0, 0, 0.75);
     background-position: 0% 50%;
 }
+
+.text{
+    font-family: roboto;
+}
+
 .LineasImagen:hover .text {
     transform: rotate(-45deg) translate(0px) rotate(-315deg);
     background: rgba(102, 92, 68, 0.8);
@@ -616,7 +614,7 @@
 }
 
 .ContenedorTarjetaImagen{
-    width: 100%;
+    width: 90%;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -684,7 +682,7 @@
     letter-spacing: -12px;
     text-align: center;
 
-    font-size: 350%;
+    font-size: 50px;
 
 }
 
@@ -787,7 +785,7 @@
     padding: 10px 20px;
 }
 
-.ContenedorMapa img{
+.Mapa img{
     max-width: 100%;
     width: 400px;
     margin-left: 40px;
@@ -1037,16 +1035,18 @@
     .llamada-accion a{
         font-size: 15px;
         margin-bottom: 40px;
+        width: 50%;
     }
 
     .AsesorarteConte{
         font-size: 90%;
     }
     .asesorarte{
+        width: fit-content;
         align-items: center;
     }
     .asesorarte h2{
-        font-size: 20px;
+        font-size: 18px;
         padding-bottom: 3%;
     }
 }
@@ -1181,10 +1181,16 @@
 @media (max-width:800px) {
     .ContenedorVidriado{
         height: 750px;
+        width: fit-content;
     }
 
     .ContenedorVidriado a{
         margin-bottom: 0px;
+        width: fit-content;
+    }
+
+    .VidriadoTitulo h2{
+        font-size: 40px;
     }
 }
 /************************** FIN SECCION VIDRIADO */
@@ -1290,12 +1296,24 @@
 
     .MapaTexto{
         margin-bottom: 20px;
+        margin-right: 20px;
     }
 
     .MapaTexto h2{
         padding-bottom: 10px;
+        font-size: 30px;
     }
 
+    .Mapa img {
+        width: 300px;
+        margin-bottom: 15px;
+        margin-right: 20px;
+    }
+
+    .Mapa .btn2{
+        width: fit-content;
+        font-size: 17px;
+    }
 }
 
 
@@ -1318,6 +1336,19 @@
 
 
 
+/* pruebas */
+@media screen and (max-width:640px){
+    .hero{
+        height: 7000px;
+        width: 100%;
+
+        background-color: #726b5c;
+    }
+
+    .SeccionVidriado{
+        background-color: #7e776e;
+    }
+}
 
 
 
