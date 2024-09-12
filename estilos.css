@@ -48,12 +48,14 @@
     padding: 0;
 }
 
+body{
+    max-width: 100%;
+}
 
 /******************** INICIO MENU HAMBURGUESA*********************** */
 .blur{
     background-color: rgba(255, 255, 255, .1);
     backdrop-filter: blur(0.5rem);
-    margin-bottom: 100px;
 }
 
 
@@ -72,7 +74,11 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
+    width: 100%;
     height: fit-content;
+
+
     color: #000;
 }
 
@@ -114,6 +120,7 @@
 
 .nav__close{
     transform: var(--state-close);
+    z-index: 100;
 }
 
 .nav__icon{
@@ -136,6 +143,8 @@
 
     transform: var(--state-menu);
     transition: .3s transform;
+
+    z-index: 100;
 }
 
 .nav__item{
@@ -143,11 +152,12 @@
 }
 
 .nav__link{
+    font-family: robotoregular;
     color: #332d22;
     text-decoration: none;
     font-size: 1.9rem;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }
 /******************** FIN MENU HAMBURGUESA*********************** */
 
@@ -156,17 +166,23 @@
 /******************** INICIO SECCION BANNER*********************** */
 
 .banner{
-    width: 100%;
+    max-width: 100%;
     background-size: cover;
     height: fit-content;
     margin-bottom: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 5rem 4rem 15rem;
 }
 
+.bannerContent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vw;
 
-.banner > div{
-    width: 90%;
-    height: 100%;
-    margin: 5%;
 }
 
 
@@ -175,7 +191,8 @@
     flex-flow: column;
     justify-content: left;
     align-items: flex-start;
-    max-width: 55%;
+
+    grid-column: 1/3;
 }
 
 
@@ -183,7 +200,7 @@
     font-family: logo2;
     text-transform: uppercase;
     letter-spacing: 10px;
-    font-size: 45px;
+    font-size: 7.5vh;
     color:#332d22;
     padding: 35px;
     background-color: rgba(221, 208, 190, 0.75);
@@ -198,10 +215,10 @@
     text-decoration: none;
     text-transform: uppercase;
     color: rgba(221,208,190);
-    padding: 10px;
+    padding: 10px 20px;
     background-color: rgba(0, 0, 0, 0.7);
     margin-top: 35px;
-    width: 50%;
+    width: fit-content;
     text-align: center;
     transition: all 1s;
     Transition: all 1s ease;
@@ -213,37 +230,83 @@
     font-size: 18px;
 }
 
-.AsesorarteConte{
-    display: inline-flex;
-    justify-content: center;
-    align-content: flex-end;
+
+
+.catalogo{
+    display: flex;
     flex-direction: column;
-    margin-left: 8%;
-    width: 37%;
+    gap: 1rem;
+
     height: fit-content;
-    margin-bottom: 100px;
-}
+    padding: 1rem;
 
-
-.asesorarte{
     color: rgba(221,208,190);
     background-color: rgba(0, 0, 0, 0.80);
     border-top: solid 5px rgba(221,208,190);
 }
 
-.asesorarte h2{
-    font-family: robotoregular;
-    font-size: 24px;
-    text-align: center;
-    padding: 2%;
-    margin-bottom: 20px;
+.catalogoTitulo{
+    display: flex;
+    flex-direction: column;
+
 }
 
-.asesorarte p{
+.catalogo h2{
+    font-family: robotoregular;
+    font-size: 24px;
+    padding: 0.5rem 0;
+}
+
+.catalogo p{
     font-family: roboto;
     font-size: 100%;
     text-align: left;
-    padding: 3%;
+
+    text-decoration: none;
+    padding: 0.5rem 0 0 0;
+
+}
+
+.catalogoImagen {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+
+.catalogoImagen img {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0; /* El overlay empieza en la parte inferior */
+    left: 0;
+    width: 100%;
+    height: 30%; /* Inicialmente pequeño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: height 0.5s ease, bottom 0.5s ease;
+    overflow: hidden;
+}
+
+.catalogoImagen:hover .overlay {
+    height: 100%; /* Se expande para cubrir toda la imagen */
+    bottom: 0; /* Mantiene la posición inferior pero cubre la imagen desde abajo hacia arriba */
+}
+
+.btnCatalogo {
+    font-family: roboto;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(221,208,190);
+    padding: 10px;
+    text-align: center;
+    background-color: transparent;
 }
 
 /******************** FIN SECCION BANNER*********************** */
@@ -260,15 +323,24 @@
 
 .contenedor__ventajas{
     background-color: rgba(128, 120, 107, 0.9);
-    height: 80vh;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    padding: 2rem;
 }
 
 .ventajas{
-    width: 90%;
-    height: 40vh;
-    display: inline-flex;
-    align-items: center;
-    margin: -8px 5% 5% 5%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vw;
+
+    
+
+    margin: -5rem 5% 5% 5%;
     text-align: center;
     font-size: 18px;
 }
@@ -281,6 +353,8 @@
     padding: 10px;
     border-radius: 100%;
 }
+
+
 
 .ventajas h2{
     text-transform: uppercase;
@@ -297,28 +371,14 @@
     font-family: robotoregular;
     letter-spacing: 1px;
     margin-bottom: 40px;
+
+    padding: 2vw;
 }
 
 .ventajas > div{
     background-color: #B6ACA0;
     color: #352a15bc;
     border-top: solid 5px #332d22;
-    height: 75vh;
-}
-
-.div__ventajas__1{
-    padding:10px;
-}
-
-
-.div__ventajas__2{
-    margin: 0% 5% 0% 5%;
-    padding: 10px;
-}
-
-
-.div__ventajas__2 p{
-    padding-bottom: 10px;
 }
 
 
@@ -369,12 +429,8 @@
     color: #fff;
 }
 
-.div__ventajas__3 a{
+#ventajas__boton1{
     display: none;
-}
-
-.div__ventajas__3 p{
-    padding: 10px;
 }
 
 /******************** FIN SECCION VENTAJAS*********************** */
@@ -384,7 +440,10 @@
 
 /******************** INICIO SECCION LINEAS *********************** */
 .SecLineas{
-    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    
 }
 
 
@@ -394,7 +453,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4rem;
+
+    margin: 0 4rem;
 }
 
 .Lineas{
@@ -405,7 +470,6 @@
 
 
     background-color: rgba(128, 120, 107, 0.95);
-    margin: 20px;
     padding: 30px 10px;
     height: 700px;
 }
@@ -427,7 +491,7 @@
     display: block;
     position: relative;
     width: 14rem;
-    height: 14rem; 
+    height: 14rem;
     cursor: pointer;
     background-size: 120%;
     border-radius: 50%;
@@ -479,7 +543,7 @@
     font-family: logo1;
     font-size: 22px;
     letter-spacing: -3px;
-    
+
 
 
     margin-bottom: 20px;
@@ -487,16 +551,12 @@
 }
 
 .LineasTexto p{
-
     font-family: robotoregular;
     letter-spacing: 1px;
     font-size: 19px;
-    color: #332d22;
+    color: #14120e;
 }
 
-.LineasTexto a{
-    width: 40%;
-}
 
 .Herrero .LineasImagen {
     background: url(assets/LineaHerrero.webp) no-repeat 100% 50%;
@@ -557,6 +617,7 @@
 
 .carrousel{
     width: 100%;
+    max-width: 100%;
 }
 
 .conteCarrousel{
@@ -587,11 +648,11 @@
     left: 0;
     right: 0;
     height: 100%;
-    width: 100%; 
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px; 
+    padding: 20px;
 }
 
 .itemCarrouselArrows > i:hover {
@@ -626,11 +687,11 @@
     font-size: 30px;
     border-bottom: solid 1px #332d22;
     color: #332d22;
-    
+
 }
 
 .ContenedorTarjetaImagen{
-    width: 90%;
+    width: 100%;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -667,8 +728,9 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+
     width: 100%;
+    height: fit-content;
 }
 
 .ContenedorVidriado{
@@ -676,7 +738,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
+
     height: 550px;
     width: 100%;
 }
@@ -692,8 +754,8 @@
 }
 
 .VidriadoTitulo h2{
-    font-family: logo1;
-    letter-spacing: -12px;
+    font-family: roboto;
+    letter-spacing: 4px;
     text-align: center;
 
     font-size: 50px;
@@ -730,7 +792,11 @@
     width: 30%;
     margin: 50px;
 
+    color: #fff;
+}
 
+.ContenedorVidriado a:hover{
+    color: #9f998f;
 }
 
 
@@ -781,7 +847,7 @@
     background-color: #2b271f;
 
     display: flex;
-    
+
 
     width: 100%;
     height: 430px;
@@ -816,12 +882,12 @@
 
     color: #B6ACA0;
 
-    margin-left: 50px; 
+    margin-left: 50px;
 }
 
 .MapaTexto h2{
     font-size: 35px;
-    
+
     padding-bottom: 50px;
     text-transform: uppercase;
 }
@@ -906,8 +972,8 @@
 /* BOTON WHATSAPP */
 .what{
     background-color: #332d22;
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -950,12 +1016,15 @@
 }
 
 @media (min-width:768px) {
+    .hero{
+        z-index: 100;
+    }
 
     .nav{
         --state-hamburguer:scale(0);
         --state-menu: translate(0);
     }
-    
+
     .nav:target{
         --state-close: scale(0);
     }
@@ -966,7 +1035,7 @@
         position: unset;
         gap: 1.5em;
         grid-auto-flow: column;
-    
+
         transform: unset;
 
         grid-column: -2/-1;
@@ -984,19 +1053,24 @@
 
 
 /************************** INICIO SECCION BANNER */
-@media (max-width:1250px) {
-    .AsesorarteConte{
-        width: 35%;
-    }
-}
-
 @media (max-width:768px) {
     .banner{
-        display: inline-flex;
+        display: flex;
         flex-flow: wrap column;
         justify-content: center;
         align-content: center;
-        margin-bottom: 80px;
+
+        margin: 10vh 4vw;
+    }
+
+    .bannerContent{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        justify-items: center;
+
+        gap: 0;
     }
 
     .llamada-accion{
@@ -1004,36 +1078,36 @@
         margin: 0;
         padding: 0;
         align-items: center;
+
+        margin-bottom: 5vh;
     }
-    
+
     .llamada-accion h2{
         text-align: center;
+        font-size: 5vh;
     }
 
-    .AsesorarteConte{
-        display: flex;
-        flex-flow: column;
+
+    .catalogo{
+        align-items: center;
         justify-content: center;
-        align-content: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
 
-    .asesorarte{
-        width: 100%;
-        height: fit-content;
-        align-self: center;
 
+        width: 70%;
         font-size: 17px;
     }
+
+    .catalogoImagen{
+        width: 200px;
+        height: 150px;
+    }
+
     .banner > div{
         height: fit-content;
     }
-    .ventajas > div{
-        height: 90vh;
-    }
 }
+
+
 @media (max-width:560px) {
     .nav__logo{
         width: 145px;
@@ -1044,8 +1118,8 @@
     }
 
     .llamada-accion h2{
-        width: 100%;
         padding: 20px;
+        font-size: 4vh;
     }
     .llamada-accion a{
         font-size: 15px;
@@ -1053,18 +1127,16 @@
         width: 50%;
     }
 
-    .AsesorarteConte{
-        font-size: 90%;
-    }
-    .asesorarte{
+    .catalogo{
         width: fit-content;
         align-items: center;
     }
-    .asesorarte h2{
+    .catalogo h2{
         font-size: 18px;
         padding-bottom: 3%;
     }
 }
+
 /************************** FIN SECCION BANNER */
 
 
@@ -1073,99 +1145,76 @@
 
 
 /************************** INICIO SECCION VENTAJAS */
-@media (max-width:1200px){
-    .ventajas p{
-        padding-bottom: 10px;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-}
-
-
-
-@media (max-width:1100px) {
-
-    .ventajas > div{
-        height: 90vh;
-        margin-top: 50px;
-    }
-
-    .ventajas p{
-        padding-bottom: 40px;
-        letter-spacing: 0px;
-    }
-}
 
 
 
 @media (max-width:800px){
     .contenedor__ventajas{
-        height: 1200px;
-    }
-    
-    .ventajas{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    .ventajas p{
-        padding: 10px;
-        padding-top: 3px;
-        font-size: 19px;
-        letter-spacing: 0px;
-    }
-    
-    .ventajas h2{
-        margin-bottom: 8px;
-        font-size: 20px;
-    }
-    
-    .ventajas > div{
-        margin-top: 5%;
-        margin-bottom: 5%;
-        width: 100%;
+        background-color: rgba(128, 120, 107);
         height: fit-content;
     }
-    
-    .div__ventajas__2 a{
+    .ventajas{
+        margin-top: 1vh;
+        display: block;
+
+    }
+
+    .div__ventajas{
+        height: fit-content;
+
+        margin: 5vh 0;
+        padding: 3vh;
+    }
+
+    #ventajas__boton{
         display: none;
     }
-
-    .div__ventajas__3 a{
+    #ventajas__boton1{
         display: inline-flex;
-        margin-bottom: 10px;
-        width: fit-content;
-        
-    }
-
-}
-
-
-@media (max-width:400px) { 
-    .div__ventajas__3 a{
-        font-size: 20px;
-        width: fit-content;
-        
     }
 }
+
+
+
 /************************** FIN SECCION VENTAJAS */
 
 /************************** INICIO SECCION LINEAS */
-@media (max-width:800px) { 
+
+@media (max-width:800px) {
     .ConteLineas{
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
+
+        width: 100%;
+        margin: 0;
     }
     .Lineas{
-        height: 600px;
+        height: fit-content;
     }
 }
 
-@media (max-width:1000px) {
-    .Lineas{
-        height: 800px;
+
+@media (max-width:550px) {
+    .LineasImagenConte{
+        margin-top: 2vh;
+        height: 200px;
+    }
+    .LineasImagen{
+        width: 10rem;
+        height: 10rem;
+    }
+    .LineasImagen .text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5rem;
+        height: 5rem;
+        line-height: 8rem;
+        margin-top: -7rem;
+        margin-left: -7rem;
+        font-size: 1rem;
     }
 }
 /************************** FIN SECCION LINEAS */
@@ -1195,9 +1244,10 @@
 /************************** INICIO SECCION VIDRIADO */
 @media (max-width:800px) {
     .SeccionVidriado{
-        width: 100%;
         background-size: cover;
-        height: 100vh;
+        background-attachment: unset;
+        background-repeat: unset;
+        height: 130vh;
     }
 
     .ContenedorVidriado a{
@@ -1206,14 +1256,19 @@
     }
 
     .VidriadoTexto{
-        margin-bottom: 100px;
+        margin-bottom: 25vh;
     }
 
     .VidriadoTitulo h2{
         font-size: 40px;
     }
 }
+
 /************************** FIN SECCION VIDRIADO */
+
+
+
+
 
 
 /************************** INICIO SECCION GALERIA */
@@ -1296,7 +1351,7 @@
         grid-column: 2/4;
         grid-row: 4/5;
     }
-} 
+}
 
 /************************** FIN SECCION GALERIA */
 
@@ -1359,13 +1414,30 @@
 
 /* pruebas */
 @media screen and (max-width:640px){
-    .hero{
+    /* .hero{
         height: 7000px;
         width: 100%;
-    }
+    } */
+
+    /* .hero{
+        background: linear-gradient(rgba(202, 200, 200, 0.363), rgba(0, 0, 0, 0.2)),
+        url('./assets/city-5974876\ \(2\).webp');
+        background-size: cover;
+        background-attachment: unset;
+        background-repeat: unset;
+
+        height: 1000px;
+        width: auto;
+    } */
+
+
 }
 
-
+@media screen and (max-width:500px){
+    .hero{
+        height: 120vh;
+    }
+}
 
 
 
